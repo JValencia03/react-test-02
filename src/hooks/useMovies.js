@@ -1,24 +1,25 @@
-import { useRef, useState } from 'react'
-import { searchMovies } from '../services/movies'
+import { useState, useEffect } from 'react'
 
-export function useMovies ({ search }) {
-  const [movies, setNewMovies] = useState([])
-  const [loading, setLoading] = useState(false)
-  const previousSearch = useRef(search)
+export function useMovies () {
+  const [movies, setMovies] = useState(null)
+  const [error, setError] = useState()
+  const [loading, setLoading] = useState(true)
 
-  const getMovies = async () => {
-    if (search === previousSearch.current) return
-
-    try {
-      setLoading(true)
-      const newMovies = await searchMovies({ search })
-      setNewMovies(newMovies)
-    } catch (e) {
-    } finally {
-      // Se ejecuta tanto después del try, como después del catch
-      setLoading(false)
+  useEffect(() => {
+    const getMovies = async () => {
+      try {
+        const res = await fetch('https://www.omdbapi.com/?apikey=1a9f257c&s=Avengers')
+        const data = await res.json()
+        const { Search } = data
+        setMovies(Search)
+      } catch (error) {
+        setError(error)
+      } finally {
+        setLoading(false)
+      }
     }
-  }
+    getMovies()
+  }, [])
 
-  return { movies, getMovies, loading }
+  return { movies, loading, error }
 }

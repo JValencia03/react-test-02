@@ -4,8 +4,8 @@ Crea una aplicación para buscar películas
 
 API a usar: - https://www.omdbapi.com/
 API KEY: 1a9f257c
-https://www.omdbapi.com/?apikey=1a9f257c&s=Avengers
 Consigue la API Key en la propia página web registrando tu email.
+https://www.omdbapi.com/?apikey=1a9f257c&s=Indiana
 
 Requerimientos:
 
@@ -15,13 +15,13 @@ Requerimientos:
 
 ✅ Que el formulario funcione
 
-✅ Haz que las películas se muestren en un grid responsive.
+- Haz que las películas se muestren en un grid responsive.
 
-✅ Hacer el fetching de datos a la API
+- Hacer el fetching de datos a la API
 
 Primera iteración:
 
-✅ Evitar que se haga la misma búsqueda dos veces seguidas.
+- Evitar que se haga la misma búsqueda dos veces seguidas.
 
 - Haz que la búsqueda se haga automáticamente al escribir.
 

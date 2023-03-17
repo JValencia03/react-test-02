@@ -1,14 +1,16 @@
 function ListOfMovies ({ movies }) {
   return (
-    <ul className='movies'>
+    <ul>
       {
-        movies.map((movie) => (
-          <li key={movie.id}>
-            <img src={movie.poster} alt={movie.title} />
-            <h3>{movie.title}</h3>
-            <p>{movie.year}</p>
-          </li>
-        ))
+        movies?.map((movie) => {
+          return (
+            <li key={movie.imdbID}>
+              <h3>{movie.Title}</h3>
+              <p>{movie.Year}</p>
+              <img src={movie.Poster} alt={movie.Title} />
+            </li>
+          )
+        })
       }
     </ul>
   )
@@ -16,7 +18,7 @@ function ListOfMovies ({ movies }) {
 
 function NoMoviesResults () {
   return (
-    <p>No movies results</p>
+    <p>No movies result</p>
   )
 }
 
