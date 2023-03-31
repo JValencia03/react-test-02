@@ -4,12 +4,14 @@ specifiers:
   '@types/react': ^18.0.27
   '@types/react-dom': ^18.0.10
   '@vitejs/plugin-react-swc': ^3.0.0
+  just-debounce-it: 3.2.0
   react: ^18.2.0
   react-dom: ^18.2.0
   standard: 17.0.0
   vite: ^4.1.0
 
 dependencies:
+  just-debounce-it: 3.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   standard: 17.0.0
@@ -1411,6 +1413,10 @@ packages:
     dependencies:
       array-includes: 3.1.6
       object.assign: 4.1.4
+    dev: false
+
+  /just-debounce-it/3.2.0:
+    resolution: {integrity: sha512-WXzwLL0745uNuedrCsCs3rpmfD6DBaf7uuVwaq98/8dafURfgQaBsSpjiPp5+CW6Vjltwy9cOGI6qE71b3T8iQ==}
     dev: false
 
   /levn/0.4.1:
